@@ -1,0 +1,136 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.map-container {
+  height: 500px;
+  width: 80%;
+  border-radius: 12px;
+  margin-left: 100px;
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: sans-serif;
+}
+.stat-card{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Chiziqning uzuq-uzuqlari harakatlanishi uchun */
+@keyframes flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Bu klassni xaritadagi chiziqlarga beramiz */
+.flowing-line {
+  stroke-dasharray: 10, 10; /* Chiziq uzunligi va bo'shliq */
+  animation: flow 1s linear infinite; /* Cheksiz harakat */
+}
+
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.live-tag {
+  background: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 100px;
+}
+
+.info-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.status-online { color: green; font-weight: bold; }
+.status-warning { color: orange; font-weight: bold; }
+
+
+.log-container {
+  background: #1e1e1e;
+  color: #00ff00;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.log-item.warning { color: #ffcc00; }
+.log-item.success { color: #00ff00; }
+.log-item.info { color: #00ccff; }
+
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: #f4f7f6;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px dashed #ccc;
+}
+
+.comparison-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.metric {
+  margin: 10px 0;
+}
+
+.bar-container {
+  background: #eee;
+  height: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+.comparison-placeholder {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-style: italic;
+}
